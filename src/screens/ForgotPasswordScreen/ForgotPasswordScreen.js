@@ -3,21 +3,42 @@ import {
     View, 
     Text, 
     StyleSheet,  
-    ScrollView 
+    ScrollView,
+    Alert
 } from 'react-native';
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
 import SocialSignInButtons from '../../components/SocialSignInButtons';
-
+import { useNavigation } from '@react-navigation/native';
+import {useForm} from 'react-hook-form';
+import { Auth } from 'aws-amplify';
 
 const ForgotPasswordScreen = () => {
-    const [username, setUsername] = useState('');
+    const {
+        control,
+        handleSubmit} = useForm(
+            // {
+            // defaultValues: {
+            // username: 'Default username',
+            // }, 
+        // }
+        );
 
-    const onSendPressed = () => {
-        console.warn("onConfirmPressed");
-    }
+    const navigation = useNavigation();
+
+    const onSendPressed = async data => {
+        try {
+            await Auth.forgotPassword(data.username);
+            navigation.navigate('NewPassword');
+        } catch (e) {
+            Alert.alert('Oops', e.message);
+        }
+    };
+    
     const onSignInPress = () => {
         console.warn("onSignInPress");
+
+        navigation.navigate('SignIn');
     }
     const onResendPress = () => {
         console.warn("onResendPress");
@@ -29,14 +50,17 @@ const ForgotPasswordScreen = () => {
             <Text style={styles.title}>Reset your Password</Text>
             
             <CustomInput 
+                name='username'
                 placeholder='Username' 
-                value={username} 
-                setValue={setUsername}
+                control={control}
+                rules={{
+                    required: 'Username is required',
+                }}
             />
 
             <CustomButton 
                 text="Send" 
-                onPress={onSendPressed} 
+                onPress={handleSubmit(onSendPressed)} 
             />
 
             <CustomButton
