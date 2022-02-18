@@ -1,0 +1,58 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-venato-staging-161748-authRole",
+      "UnauthRoleArn": "arn:aws:iam::970947090609:role/amplify-venato-staging-161748-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::970947090609:role/amplify-venato-staging-161748-authRole",
+      "Region": "eu-west-1",
+      "DeploymentBucketName": "amplify-venato-staging-161748-deployment",
+      "UnauthRoleName": "amplify-venato-staging-161748-unauthRole",
+      "StackName": "amplify-venato-staging-161748",
+      "StackId": "arn:aws:cloudformation:eu-west-1:970947090609:stack/amplify-venato-staging-161748/53bc7150-8768-11ec-9a8d-06949f49500f",
+      "AmplifyAppId": "d35rs5snz2ns78"
+    }
+  },
+  "auth": {
+    "Venato": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [],
+        "signupAttributes": [
+          "PREFERRED_USERNAME",
+          "EMAIL",
+          "NAME"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-venato-staging-161748-deployment/amplify-cfn-templates/auth/Venato-cloudformation-template.json",
+        "logicalId": "authVenato"
+      },
+      "lastPushTimeStamp": "2022-02-06T16:26:58.897Z",
+      "output": {
+        "UserPoolId": "eu-west-1_EAUStFC8W",
+        "AppClientIDWeb": "77fa3q3kch59k96hdc901e04ai",
+        "AppClientID": "4nant7hk37ojcld9m169s2t7ef",
+        "IdentityPoolId": "eu-west-1:28f7f8a9-e5cd-439d-9075-216a2dc97a13",
+        "UserPoolArn": "arn:aws:cognito-idp:eu-west-1:970947090609:userpool/eu-west-1_EAUStFC8W",
+        "IdentityPoolName": "testAuthIdentityPool__staging",
+        "UserPoolName": "Venato"
+      },
+      "lastPushDirHash": "9pBCCzzGelSvDlFhJp9cjMEBVrY="
+    }
+  }
+}

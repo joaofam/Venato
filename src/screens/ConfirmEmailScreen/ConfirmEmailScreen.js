@@ -42,7 +42,7 @@ const ConfirmEmailScreen = () => {
         
     }
     const onSignInPress = () => {
-        console.warn("onSignInPress");
+        // console.warn("onSignInPress");
         navigation.navigate('SignIn')
     }
 

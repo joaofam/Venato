@@ -1,5 +1,5 @@
 {
-  "name": "ReactNativeAndroidTest",
+  "name": "VenatoBike",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -12,6 +12,7 @@
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.15.17",
     "@react-native-community/cli": "^7.0.1",
+    "@react-native-community/masked-view": "^0.1.11",
     "@react-native-community/netinfo": "^7.1.9",
     "@react-native-picker/picker": "^2.2.1",
     "@react-navigation/bottom-tabs": "^6.2.0",
@@ -20,12 +21,17 @@
     "amazon-cognito-identity-js": "^5.2.6",
     "aws-amplify": "^4.3.14",
     "aws-amplify-react-native": "^6.0.2",
+    "i": "^0.3.7",
     "react": "17.0.2",
     "react-hook-form": "^7.26.0",
     "react-native": "0.67.2",
     "react-native-eject": "^0.1.2",
-    "react-native-safe-area-context": "^3.3.2",
-    "react-native-screens": "^3.10.2"
+    "react-native-gesture-handler": "^2.2.0",
+    "react-native-ionicons": "^4.6.5",
+    "react-native-reanimated": "^2.4.1",
+    "react-native-safe-area-context": "^3.4.0",
+    "react-native-screens": "^3.11.1",
+    "react-native-vector-icons": "^9.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.16.12",
