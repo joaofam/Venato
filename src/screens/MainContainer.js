@@ -29,10 +29,10 @@ function MainContainer() {
               iconName = focused ? 'home' : 'home-outline';
 
             } else if (rn === findName) {
-              iconName = focused ? 'list' : 'locate';
+              iconName = focused ? 'locate' : 'locate';
 
             } else if (rn === settingsName) {
-              iconName = focused ? 'settings' : 'person';
+              iconName = focused ? 'person' : 'person';
             }
 
             // You can return any component that you like here!
