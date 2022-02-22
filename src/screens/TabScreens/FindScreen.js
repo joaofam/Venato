@@ -19,8 +19,8 @@ export default function FindScreen({ navigation }) {
         provider={PROVIDER_GOOGLE} // remove if not using Google Maps
         style={styles.map}
         region={{
-          latitude: 37.78825,
-          longitude: -122.4324,
+          latitude: 53.350140,
+          longitude: -6.266155,
           latitudeDelta: 0.015,
           longitudeDelta: 0.0121,
         }}
