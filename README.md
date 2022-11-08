@@ -34,7 +34,7 @@ Motivation Last summer, we cycled to Dun Laoghaire together to go for a swim. Un
 This section details the system architecture of our project. As seen below, there is a system architecture diagram, a data flow diagram and a use case diagram. The system architecture diagram contains the key components in our system and explains how they interact. The use case diagram and data flow diagrams are used to further illustrate the high-level design of our project
 
 ### 3.1 System Architecture Diagram
-![[Pasted image 20221108173733.png]]
+![image](https://user-images.githubusercontent.com/57375890/200639676-85f5817f-a9bf-4b30-a656-be5f4490108b.png)
 
 ### 3.2 GPS Satellite -> GPS Module 
 
@@ -65,9 +65,9 @@ The web server consists of both a database and a back-end server. This is where 
 Throughout the project, we decided to use AWS and the services that it provides in order to create a functioning and effective authentication system for our users. Firstly, we used AWS Amplify to handle user registration/login/signout. We also used AWS Cognito to create and view user pools that contain our users’ provided information. 
 
 ### 3.9 Data Flow Diagram 
-![[Pasted image 20221108174137.png]]
+![image](https://user-images.githubusercontent.com/57375890/200639756-25211c77-771c-465f-a923-a179a3540a35.png)
 The data flow diagram above illustrates the process behind the user registering for a new account. Our app forms a signup request based on the credentials that the user inputs on their screen. This request is then sent to our app’s AWS backend. We used the AWS amplify framework in order to make a serverless backend. After a user’s details are successfully validated by Amplify, the payload is sent to the AWS Cognito API. The Cognito API then sends a verification email to the email address that the user provided. After user verification, a new user is created in the Cognito User Pool, and the user data is stored to Amplify. 
 
 ### 3.10 Use Case Diagram
-![[Pasted image 20221108174158.png]]
+![image](https://user-images.githubusercontent.com/57375890/200639818-e2f537ed-1e4b-4372-96f8-bf5aaf0ffa90.png)
 The use case diagram above illustrates how a user will interact with our Venato app system. Upon opening the app, the user must first sign in. This is dependent on the login feature of our app, whereby a user must first be signed up. If they are not signed up, their login is dependent on them receiving their email verification code, which then authorises them to access our app. When a user is logging in, our app is also able to handle invalid credentials (e.g. password) as well as a change password option. There are other remaining use cases of our app that become available to the user after signing in, which include the ability to access the home screen, viewing their bike location, opening their user profile and finally signing out. These use cases are all dependent on the user first signing into the app, as illustrated in the diagram through the dotted line dependencies. The sign out use case is also dependent on the user opening their user profile, as that is where the sign out button is located.
